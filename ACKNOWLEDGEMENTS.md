@@ -1,0 +1,8 @@
+# Acknowledgements
+
+- [Prism Library](https://prismlibrary.github.io/)
+  - [PrismOutlook](https://github.com/brianlagunas/PrismOutlook) from [BrianLagunas](https://github.com/brianlagunas)
+
+  See the Twitch archives
+  - [Building Outlook: Setting up the Prism Project](https://www.youtube.com/watch?v=yd_DtUKf3pc&list=PLG8rj6Rr0BU_r0pLKvkF5THxzce6Ygdkm&index=18)
+
