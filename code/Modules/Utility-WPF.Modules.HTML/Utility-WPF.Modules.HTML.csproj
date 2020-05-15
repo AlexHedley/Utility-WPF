@@ -4,20 +4,18 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E48AA5CF-63C1-42B8-BFEA-17F91C4DEF13}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{2E872209-E671-4BE4-BC10-0ACE99C9AF2C}</ProjectGuid>
+    <OutputType>library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Utility_WPF</RootNamespace>
-    <AssemblyName>Utility-WPF</AssemblyName>
+    <RootNamespace>Utility_WPF.Modules.HTML</RootNamespace>
+    <AssemblyName>Utility-WPF.Modules.HTML</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -27,16 +25,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>Utility.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -55,29 +49,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Page Include="Views\MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="..\Shared\SharedAssemblyInfo.cs">
-      <Link>Properties\SharedAssemblyInfo.cs</Link>
-    </Compile>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DynamicDirectoryModuleCatalog.cs" />
-    <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="Views\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
+    <Compile Include="HTMLModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -91,6 +63,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ViewModels\ViewAViewModel.cs" />
+    <Compile Include="Views\ViewA.xaml.cs">
+      <DependentUpon>ViewA.xaml</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -99,30 +75,41 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Prism.DryIoc" Version="7.2.0.1367" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Utility.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Modules\Utility-WPF.Modules.HTML\Utility-WPF.Modules.HTML.csproj">
-      <Project>{2e872209-e671-4be4-bc10-0ace99c9af2c}</Project>
-      <Name>Utility-WPF.Modules.HTML</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Services\Utility-WPF.Services.Interfaces\Utility-WPF.Services.Interfaces.csproj">
+    <ProjectReference Include="..\..\Services\Utility-WPF.Services.Interfaces\Utility-WPF.Services.Interfaces.csproj">
       <Project>{1e59b9fd-7ad7-4872-8daa-b5a8c8ac9f9a}</Project>
       <Name>Utility-WPF.Services.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Services\Utility-WPF.Services\Utility-WPF.Services.csproj">
+    <ProjectReference Include="..\..\Services\Utility-WPF.Services\Utility-WPF.Services.csproj">
       <Project>{bfb69cb5-2128-4f2e-920e-779916e8a5a1}</Project>
       <Name>Utility-WPF.Services</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Utility-WPF.Core\Utility-WPF.Core.csproj">
+    <ProjectReference Include="..\..\Utility-WPF.Core\Utility-WPF.Core.csproj">
       <Project>{45452d20-2310-4f33-8666-2166c10c3f67}</Project>
       <Name>Utility-WPF.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\ViewA.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Toolkit.Wpf.UI.Controls.WebView">
+      <Version>6.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Prism.Wpf" Version="7.2.0.1422" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Page.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /y "$(TargetPath)" "$(SolutionDir)Utility-WPF\$(OutDir)Modules\"</PostBuildEvent>
+  </PropertyGroup>
 </Project>

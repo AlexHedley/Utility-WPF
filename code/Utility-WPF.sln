@@ -12,6 +12,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{4EBE3F
 		Shared\SharedAssemblyInfo.cs = Shared\SharedAssemblyInfo.cs
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{AFDF0020-05A5-4079-81A6-1647E4D5AF72}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{741862BA-8D55-4247-8B7C-481779B4E86B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E5CF1ECF-F23F-483C-8E85-48C41A8594F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility-WPF.Modules.HTML", "Modules\Utility-WPF.Modules.HTML\Utility-WPF.Modules.HTML.csproj", "{2E872209-E671-4BE4-BC10-0ACE99C9AF2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility-WPF.Services.Interfaces", "Services\Utility-WPF.Services.Interfaces\Utility-WPF.Services.Interfaces.csproj", "{1E59B9FD-7AD7-4872-8DAA-B5A8C8AC9F9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility-WPF.Services", "Services\Utility-WPF.Services\Utility-WPF.Services.csproj", "{BFB69CB5-2128-4F2E-920E-779916E8A5A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,9 +38,26 @@ Global
 		{45452D20-2310-4F33-8666-2166C10C3F67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45452D20-2310-4F33-8666-2166C10C3F67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45452D20-2310-4F33-8666-2166C10C3F67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E872209-E671-4BE4-BC10-0ACE99C9AF2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E872209-E671-4BE4-BC10-0ACE99C9AF2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E872209-E671-4BE4-BC10-0ACE99C9AF2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E872209-E671-4BE4-BC10-0ACE99C9AF2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E59B9FD-7AD7-4872-8DAA-B5A8C8AC9F9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E59B9FD-7AD7-4872-8DAA-B5A8C8AC9F9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E59B9FD-7AD7-4872-8DAA-B5A8C8AC9F9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E59B9FD-7AD7-4872-8DAA-B5A8C8AC9F9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFB69CB5-2128-4F2E-920E-779916E8A5A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFB69CB5-2128-4F2E-920E-779916E8A5A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFB69CB5-2128-4F2E-920E-779916E8A5A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFB69CB5-2128-4F2E-920E-779916E8A5A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2E872209-E671-4BE4-BC10-0ACE99C9AF2C} = {AFDF0020-05A5-4079-81A6-1647E4D5AF72}
+		{1E59B9FD-7AD7-4872-8DAA-B5A8C8AC9F9A} = {741862BA-8D55-4247-8B7C-481779B4E86B}
+		{BFB69CB5-2128-4F2E-920E-779916E8A5A1} = {741862BA-8D55-4247-8B7C-481779B4E86B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2BB74EC6-7401-4A3B-8158-073B7C3DBAB9}
