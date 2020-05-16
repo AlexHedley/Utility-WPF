@@ -4,7 +4,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
-        Title="{Binding Title}" Height="350" Width="525">
+        Title="{Binding Title}" Height="350" Width="525"
+        ResizeMode="NoResize"
+        >
 
     <!--<DockPanel LastChildFill="True">-->
         <!--<Menu DockPanel.Dock="Top">
@@ -40,6 +42,9 @@
                 </TabItem>
                 <TabItem Header="Guid">
                     <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegionGuid}" />
+                </TabItem>
+                <TabItem Header="XML">
+                    <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegionXml}" />
                 </TabItem>
             </TabControl>
         </Grid>
