@@ -6,6 +6,9 @@ using Utility_WPF.Services.Interfaces;
 
 namespace Utility_WPF.Modules.HTML.ViewModels
 {
+    /// <summary>
+    /// ViewA - View Model
+    /// </summary>
     public class ViewAViewModel : RegionViewModelBase
     {
         #region Properties
@@ -23,7 +26,10 @@ namespace Utility_WPF.Modules.HTML.ViewModels
         public string Encode
         {
             get { return _encode; }
-            set { SetProperty(ref _encode, value); }
+            set { 
+                SetProperty(ref _encode, value); 
+
+            }
         }
 
         private string _decode;
@@ -50,6 +56,11 @@ namespace Utility_WPF.Modules.HTML.ViewModels
 
         #endregion Commands
 
+        /// <summary>
+        /// ViewA - View Model
+        /// </summary>
+        /// <param name="regionManager"></param>
+        /// <param name="htmlService"></param>
         public ViewAViewModel(IRegionManager regionManager, IHtmlService htmlService) :
             base(regionManager)
         {
@@ -59,36 +70,58 @@ namespace Utility_WPF.Modules.HTML.ViewModels
 
             Encode = "&lt;p&gt;Hello&lt;p&gt;";
             Decode = ""; //"<p>Hello<p>";
-            CharacterCount = 55;
+            CharacterCount = 0;
 
             ClearCommand = new DelegateCommand(ClearContent);
             EncodeCommand = new DelegateCommand(EncodeContent);
             DecodeCommand = new DelegateCommand(DecodeContent);
+
         }
 
+        #region Navigation
+
+        /// <summary>
+        /// On Navigated To
+        /// </summary>
+        /// <param name="navigationContext"></param>
         public override void OnNavigatedTo(NavigationContext navigationContext)
         {
             //do something
         }
 
+        #endregion Navigation
+
         #region Private
 
+        #region Commands
+
+        /// <summary>
+        /// Clear Content
+        /// </summary>
         private void ClearContent()
         {
             Encode = "";
             Decode = "";
         }
 
+        /// <summary>
+        /// Encode Content
+        /// </summary>
         private void EncodeContent()
         {
             Encode = HtmlService.Encode(Decode);
         }
 
+        /// <summary>
+        /// Decode Content
+        /// </summary>
         private void DecodeContent()
         {
             CharacterCount = Encode.Length;
             Decode = HtmlService.Decode(Encode);
         }
+
+        #endregion Commands
 
         #endregion Private
     }

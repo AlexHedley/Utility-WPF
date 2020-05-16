@@ -17,11 +17,12 @@ namespace Utility_WPF.Modules.HTML.Views
     /// </summary>
     public partial class ViewA : UserControl
     {
+        /// <summary>
+        /// ViewA
+        /// </summary>
         public ViewA()
         {
             InitializeComponent();
-
-            
 
             //PopulateWebView();
             //wbSample.Navigate("http://www.alexhedley.com");
@@ -30,8 +31,8 @@ namespace Utility_WPF.Modules.HTML.Views
 
             //HtmlDocument htmlDoc = webBrowser1.Document as HtmlDocument;
             //string innerText = htmlDoc.DocumentNode.Descendants("body").Single().InnerText;
-            var html = "<p>Hello from string<p>";
-            wbSample.NavigateToString(html);
+            //var html = "<p>Hello from string<p>";
+            //wbSample.NavigateToString(html);
         }
 
         //void PopulateWebView()
@@ -61,8 +62,16 @@ namespace Utility_WPF.Modules.HTML.Views
         //    _webView.NavigateToLocalStreamUri(uri, new Resolver());
         //}
 
+        /// <summary>
+        /// Resolver
+        /// </summary>
         class Resolver : IUriToStreamResolver
         {
+            /// <summary>
+            /// Uri To Stream
+            /// </summary>
+            /// <param name="uri"></param>
+            /// <returns></returns>
             public Stream UriToStream(Uri uri)
             {
                 //var path = Path.Combine(Environment.CurrentDirectory, "Page.html");
@@ -72,5 +81,6 @@ namespace Utility_WPF.Modules.HTML.Views
                 return stream;
             }
         }
+
     }
 }
