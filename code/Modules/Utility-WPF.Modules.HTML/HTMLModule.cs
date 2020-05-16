@@ -21,7 +21,7 @@ namespace Utility_WPF.Modules.HTML
 
         public void OnInitialized(IContainerProvider containerProvider)
         {
-            _regionManager.RequestNavigate(RegionNames.ContentRegionHTML, "HtmlView");
+            _regionManager.RequestNavigate(RegionNames.ContentRegionHTML, nameof(HtmlView));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)

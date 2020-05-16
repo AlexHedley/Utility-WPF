@@ -13,7 +13,7 @@ namespace Utility_WPF.Modules.HTML.ViewModels
     {
         #region Properties
 
-        protected IHtmlService HtmlService { get; private set; }
+        protected IWebHelperService WebHelperService { get; private set; }
 
         private string _message;
         public string Message
@@ -60,11 +60,11 @@ namespace Utility_WPF.Modules.HTML.ViewModels
         /// Html - View Model
         /// </summary>
         /// <param name="regionManager"></param>
-        /// <param name="htmlService"></param>
-        public HtmlViewModel(IRegionManager regionManager, IHtmlService htmlService) :
+        /// <param name="webHelperService"></param>
+        public HtmlViewModel(IRegionManager regionManager, IWebHelperService webHelperService) :
             base(regionManager)
         {
-            HtmlService = htmlService;
+            WebHelperService = webHelperService;
 
             Message = "Hello from HTML Module.";
 
@@ -109,7 +109,7 @@ namespace Utility_WPF.Modules.HTML.ViewModels
         /// </summary>
         private void EncodeContent()
         {
-            Encode = HtmlService.Encode(Decode);
+            Encode = WebHelperService.EncodeHtml(Decode);
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Utility_WPF.Modules.HTML.ViewModels
         private void DecodeContent()
         {
             CharacterCount = Encode.Length;
-            Decode = HtmlService.Decode(Encode);
+            Decode = WebHelperService.DecodeHtml(Encode);
         }
 
         #endregion Commands
