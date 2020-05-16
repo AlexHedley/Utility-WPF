@@ -11,7 +11,7 @@ using System.Windows;
 [assembly: AssemblyDescription("URL Module")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Alex Hedley")]
-[assembly: AssemblyProduct("Utility_WPF.Modules.URL")]
+[assembly: AssemblyProduct("Utility")]
 [assembly: AssemblyCopyright("Copyright © 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
