@@ -1,5 +1,4 @@
-﻿using System.IO;
-using System.Windows;
+﻿using System.Windows;
 
 using Prism.Ioc;
 using Prism.Modularity;
@@ -19,14 +18,23 @@ namespace Utility_WPF
     /// </summary>
     public partial class App
     {
+        /// <summary>
+        /// Create Shell
+        /// </summary>
+        /// <returns></returns>
         protected override Window CreateShell()
         {
             return Container.Resolve<MainWindow>();
         }
 
+        /// <summary>
+        /// Register Types
+        /// </summary>
+        /// <param name="containerRegistry"></param>
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterSingleton<IWebHelperService, WebHelperService>();
+            containerRegistry.RegisterSingleton<IXMLService, XMLService>();
         }
 
         //protected override IModuleCatalog CreateModuleCatalog()
@@ -35,6 +43,10 @@ namespace Utility_WPF
         //    return catalog;
         //}
 
+        /// <summary>
+        /// Configure Module Catalog
+        /// </summary>
+        /// <param name="moduleCatalog"></param>
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
             moduleCatalog.AddModule<HTMLModule>();

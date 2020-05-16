@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Xml;
+
 using Prism.Commands;
-using Prism.Mvvm;
 using Prism.Regions;
 
 using Utility_WPF.Core.Mvvm;
+using Utility_WPF.Services;
+using Utility_WPF.Services.Interfaces;
 
 namespace Utility_WPF.Modules.XMLPP.ViewModels
 {
@@ -21,6 +17,8 @@ namespace Utility_WPF.Modules.XMLPP.ViewModels
     public class XMLPPViewModel : RegionViewModelBase
     {
         #region Properties
+
+        protected IXMLService XMLService { get; private set; }
 
         private string _xml;
         public string Xml
@@ -49,8 +47,11 @@ namespace Utility_WPF.Modules.XMLPP.ViewModels
         /// XML Pretty Print - ViewModel
         /// </summary>
         /// <param name="regionManager"></param>
-        public XMLPPViewModel(IRegionManager regionManager) : base(regionManager)
+        /// <param name="xmlService"></param>
+        public XMLPPViewModel(IRegionManager regionManager, IXMLService xmlService) : base(regionManager)
         {
+            XMLService = xmlService;
+
             PrettyCommand = new DelegateCommand(PrettyXml);
             CopyCommand = new DelegateCommand(CopyXml);
         }
@@ -84,18 +85,7 @@ namespace Utility_WPF.Modules.XMLPP.ViewModels
 
             try
             {
-                // http://thechriskent.com/2012/05/01/prettify-your-xml-in-net/
-
-                var sw = new StringWriter();
-                var xw = new XmlTextWriter(sw);
-                xw.Formatting = Formatting.Indented;
-                xw.Indentation = 4;
-
-                var doc = new XmlDocument();
-                doc.LoadXml(Xml);
-                doc.Save(xw);
-
-                Xml = sw.ToString();
+                Xml = XMLService.PrettyXML(Xml);
             }
             catch (Exception ex)
             {

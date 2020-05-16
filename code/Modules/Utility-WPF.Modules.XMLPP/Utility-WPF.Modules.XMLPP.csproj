@@ -78,6 +78,14 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Services\Utility-WPF.Services.Interfaces\Utility-WPF.Services.Interfaces.csproj">
+      <Project>{1e59b9fd-7ad7-4872-8daa-b5a8c8ac9f9a}</Project>
+      <Name>Utility-WPF.Services.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Utility-WPF.Services\Utility-WPF.Services.csproj">
+      <Project>{bfb69cb5-2128-4f2e-920e-779916e8a5a1}</Project>
+      <Name>Utility-WPF.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Utility-WPF.Core\Utility-WPF.Core.csproj">
       <Project>{45452d20-2310-4f33-8666-2166c10c3f67}</Project>
       <Name>Utility-WPF.Core</Name>
