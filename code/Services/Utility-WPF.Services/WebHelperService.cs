@@ -8,18 +8,17 @@ namespace Utility_WPF.Services
     /// <summary>
     /// Html Service
     /// </summary>
-    public class HtmlService : IHtmlService
+    public class WebHelperService : IWebHelperService
     {
         /// <summary>
-        /// Html Service
+        /// Web Helper Service
         /// </summary>
-        public HtmlService()
+        public WebHelperService()
         {
-
         }
 
         /// <inheritdoc />
-        public string Decode(string content)
+        public string DecodeHtml(string content)
         {
             var writer = new StringWriter();
             WebUtility.HtmlDecode(content, writer);
@@ -27,9 +26,21 @@ namespace Utility_WPF.Services
         }
 
         /// <inheritdoc />
-        public string Encode(string content)
+        public string DecodeUrl(string url)
+        {
+            return WebUtility.UrlDecode(url);
+        }
+
+        /// <inheritdoc />
+        public string EncodeHtml(string content)
         {
             return WebUtility.HtmlEncode(content);
+        }
+
+        /// <inheritdoc />
+        public string EncodeUrl(string url)
+        {
+            return WebUtility.UrlEncode(url);
         }
     }
 }

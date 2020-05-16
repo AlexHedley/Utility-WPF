@@ -6,6 +6,7 @@ using Prism.Modularity;
 
 using Utility_WPF.Views;
 using Utility_WPF.Modules.HTML;
+using Utility_WPF.Modules.URL;
 using Utility_WPF.Services;
 using Utility_WPF.Services.Interfaces;
 
@@ -23,7 +24,7 @@ namespace Utility_WPF
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterSingleton<IHtmlService, HtmlService>();
+            containerRegistry.RegisterSingleton<IWebHelperService, WebHelperService>();
         }
 
         //protected override IModuleCatalog CreateModuleCatalog()
@@ -35,6 +36,7 @@ namespace Utility_WPF
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
             moduleCatalog.AddModule<HTMLModule>();
+            moduleCatalog.AddModule<URLModule>();
         }
     }
 }
