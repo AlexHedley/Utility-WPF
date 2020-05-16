@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="Utility_WPF.Modules.URL.Views.UrlView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Utility_WPF.Modules.URL.Views"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" 
+               Grid.Column="0"
+               Content="Url"
+               />
+        
+        <TextBox
+            Grid.Row="0"
+            Grid.Column="1" 
+            Grid.ColumnSpan="3"
+            Name="Encode"
+            Text="{Binding EncodeUrl}"
+        />
+
+        <Button Grid.Row="1" 
+                Grid.Column="2" 
+                x:Name="DecodeButton" 
+                Content="Decode"
+                Command="{Binding DecodeCommand}"
+        />
+
+        <Button Grid.Row="1" 
+                Grid.Column="3" 
+                x:Name="EncodeButton" 
+                Content="Encode"
+                Command="{Binding EncodeCommand}"
+        />
+
+        <Label Grid.Row="2" 
+               Grid.Column="0"
+               Content="Url"
+               />
+
+        <TextBox
+            Grid.Row="2"
+            Grid.Column="1" 
+            Grid.ColumnSpan="3"
+            Name="Decode"
+            Text="{Binding DecodeUrl}"
+        />
+
+        <Button Grid.Row="3" 
+                Grid.Column="4" 
+                x:Name="CopyButton" 
+                Content="Copy"
+                Command="{Binding CopyCommand}"
+        />
+
+    </Grid>
+</UserControl>

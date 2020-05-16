@@ -7,5 +7,6 @@
     {
         public const string ContentRegion = "ContentRegion";
         public const string ContentRegionHTML = "ContentRegionHTML";
+        public const string ContentRegionURL = "ContentRegionURL";
     }
 }

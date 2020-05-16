@@ -14,6 +14,9 @@
             <TabItem Header="HTML Decode/Encode">
                 <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegionHTML}" />
             </TabItem>
+            <TabItem Header="URL Encode">
+                <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegionURL}" />
+            </TabItem>
         </TabControl>
         
     </Grid>
