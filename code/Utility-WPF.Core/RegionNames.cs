@@ -10,5 +10,6 @@
         public const string ContentRegionURL = "ContentRegionURL";
         public const string ContentRegionGuid = "ContentRegionGuid";
         public const string ContentRegionXml = "ContentRegionXml";
+        public const string ContentRegionJson = "ContentRegionJson";
     }
 }

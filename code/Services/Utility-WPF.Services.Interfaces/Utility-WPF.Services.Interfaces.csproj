@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IJSONService.cs" />
     <Compile Include="IWebHelperService.cs" />
     <Compile Include="IXMLService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

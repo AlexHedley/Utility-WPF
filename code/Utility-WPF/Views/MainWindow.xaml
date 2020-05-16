@@ -46,6 +46,9 @@
                 <TabItem Header="XML">
                     <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegionXml}" />
                 </TabItem>
+                <TabItem Header="JSON">
+                    <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegionJson}" />
+                </TabItem>
             </TabControl>
         </Grid>
 

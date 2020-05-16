@@ -5,6 +5,7 @@ using Prism.Modularity;
 
 using Utility_WPF.Modules.Guid;
 using Utility_WPF.Modules.HTML;
+using Utility_WPF.Modules.JSONPP;
 using Utility_WPF.Modules.URL;
 using Utility_WPF.Modules.XMLPP;
 using Utility_WPF.Services;
@@ -35,6 +36,7 @@ namespace Utility_WPF
         {
             containerRegistry.RegisterSingleton<IWebHelperService, WebHelperService>();
             containerRegistry.RegisterSingleton<IXMLService, XMLService>();
+            containerRegistry.RegisterSingleton<IJSONService, JSONService>();
         }
 
         //protected override IModuleCatalog CreateModuleCatalog()
@@ -53,6 +55,7 @@ namespace Utility_WPF
             moduleCatalog.AddModule<URLModule>();
             moduleCatalog.AddModule<GuidModule>();
             moduleCatalog.AddModule<XMLPPModule>();
+            moduleCatalog.AddModule<JSONPPModule>();
         }
     }
 }
