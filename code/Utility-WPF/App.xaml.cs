@@ -7,6 +7,7 @@ using Prism.Modularity;
 using Utility_WPF.Modules.Guid;
 using Utility_WPF.Modules.HTML;
 using Utility_WPF.Modules.URL;
+using Utility_WPF.Modules.XMLPP;
 using Utility_WPF.Services;
 using Utility_WPF.Services.Interfaces;
 using Utility_WPF.Views;
@@ -39,6 +40,7 @@ namespace Utility_WPF
             moduleCatalog.AddModule<HTMLModule>();
             moduleCatalog.AddModule<URLModule>();
             moduleCatalog.AddModule<GuidModule>();
+            moduleCatalog.AddModule<XMLPPModule>();
         }
     }
 }

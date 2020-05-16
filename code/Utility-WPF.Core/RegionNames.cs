@@ -9,5 +9,6 @@
         public const string ContentRegionHTML = "ContentRegionHTML";
         public const string ContentRegionURL = "ContentRegionURL";
         public const string ContentRegionGuid = "ContentRegionGuid";
+        public const string ContentRegionXml = "ContentRegionXml";
     }
 }
