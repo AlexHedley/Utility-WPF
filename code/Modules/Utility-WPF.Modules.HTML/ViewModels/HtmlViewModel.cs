@@ -7,9 +7,9 @@ using Utility_WPF.Services.Interfaces;
 namespace Utility_WPF.Modules.HTML.ViewModels
 {
     /// <summary>
-    /// ViewA - View Model
+    /// Html - View Model
     /// </summary>
-    public class ViewAViewModel : RegionViewModelBase
+    public class HtmlViewModel : RegionViewModelBase
     {
         #region Properties
 
@@ -57,11 +57,11 @@ namespace Utility_WPF.Modules.HTML.ViewModels
         #endregion Commands
 
         /// <summary>
-        /// ViewA - View Model
+        /// Html - View Model
         /// </summary>
         /// <param name="regionManager"></param>
         /// <param name="htmlService"></param>
-        public ViewAViewModel(IRegionManager regionManager, IHtmlService htmlService) :
+        public HtmlViewModel(IRegionManager regionManager, IHtmlService htmlService) :
             base(regionManager)
         {
             HtmlService = htmlService;

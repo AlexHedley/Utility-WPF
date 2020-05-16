@@ -15,12 +15,12 @@ namespace Utility_WPF.Modules.HTML.Views
     /// <summary>
     /// Interaction logic for ViewA.xaml
     /// </summary>
-    public partial class ViewA : UserControl
+    public partial class HtmlView : UserControl
     {
         /// <summary>
-        /// ViewA
+        /// Html View
         /// </summary>
-        public ViewA()
+        public HtmlView()
         {
             InitializeComponent();
 

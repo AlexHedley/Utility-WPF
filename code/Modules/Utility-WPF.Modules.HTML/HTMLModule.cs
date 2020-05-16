@@ -21,12 +21,12 @@ namespace Utility_WPF.Modules.HTML
 
         public void OnInitialized(IContainerProvider containerProvider)
         {
-            _regionManager.RequestNavigate(RegionNames.ContentRegionHTML, "ViewA");
+            _regionManager.RequestNavigate(RegionNames.ContentRegionHTML, "HtmlView");
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<ViewA>();
+            containerRegistry.RegisterForNavigation<HtmlView>();
         }
     }
 }
