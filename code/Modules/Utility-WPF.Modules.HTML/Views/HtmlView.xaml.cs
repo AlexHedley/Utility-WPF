@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Drawing.Imaging;
 using System.IO;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Navigation;
 
 using Microsoft.Toolkit.Win32.UI.Controls.Interop.WinRT;
-using Microsoft.Toolkit.Wpf.UI.Controls;
 
 using File = System.IO.File;
 

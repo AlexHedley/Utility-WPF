@@ -11,7 +11,7 @@ using System.Windows;
 [assembly: AssemblyDescription("HTML Module")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Alex Hedley")]
-[assembly: AssemblyProduct("Utility_WPF.Modules.HTML")]
+[assembly: AssemblyProduct("Utility")]
 [assembly: AssemblyCopyright("Copyright © 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
