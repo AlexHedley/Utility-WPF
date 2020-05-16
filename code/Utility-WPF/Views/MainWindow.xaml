@@ -5,22 +5,45 @@
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="{Binding Title}" Height="350" Width="525">
-    <Grid>
 
-        <TabControl>
-            <!--<TabItem Header="General">
-                <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}" />
-            </TabItem>-->
-            <TabItem Header="HTML Decode/Encode">
-                <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegionHTML}" />
-            </TabItem>
-            <TabItem Header="URL Encode">
-                <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegionURL}" />
-            </TabItem>
-            <TabItem Header="Guid">
-                <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegionGuid}" />
-            </TabItem>
-        </TabControl>
-        
-    </Grid>
+    <!--<DockPanel LastChildFill="True">-->
+        <!--<Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_New" />
+                <MenuItem Header="_Open" />
+                <MenuItem Header="_Save" />
+                <Separator />
+                <MenuItem Header="_Exit" />
+            </MenuItem>
+        </Menu>-->
+
+        <!--<StatusBar 
+            DockPanel.Dock="Bottom"
+            Name="sbar" 
+            VerticalAlignment="Bottom" 
+            Background="Beige">
+            <StatusBarItem>
+                <TextBlock>Downloading File</TextBlock>
+            </StatusBarItem>
+        </StatusBar>-->
+
+        <Grid>
+            <TabControl>
+                <!--<TabItem Header="General">
+                    <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}" />
+                </TabItem>-->
+                <TabItem Header="HTML Decode/Encode">
+                    <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegionHTML}" />
+                </TabItem>
+                <TabItem Header="URL Encode">
+                    <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegionURL}" />
+                </TabItem>
+                <TabItem Header="Guid">
+                    <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegionGuid}" />
+                </TabItem>
+            </TabControl>
+        </Grid>
+
+    <!--</DockPanel>-->
+    
 </Window>
