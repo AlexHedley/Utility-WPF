@@ -24,20 +24,26 @@ It's using the excellent [Prism Library](https://prismlibrary.github.io/).
 
 ---
 
-# Features
+## Features
 
 I'm working on adding the original features from the app and hopefully the web.
 
 TODO:
 
-- HTML Encode/Decode
-- URL Encode
-- HEX to RGB
-- SQL Builder (IN Clause)
-- Guid
-- JSON Pretty
-- XML Pretty
-- SQL Formatter
+- [ ] HTML Encode/Decode
+- [ ] URL Encode
+- [ ] HEX to RGB
+- [ ] SQL Builder (IN Clause)
+- [ ] Guid
+- [ ] JSON Pretty
+- [ ] XML Pretty
+- [ ] SQL Formatter
+
+--
+
+## Screenshots
+
+![Example](assets/Utility-WPF.gif)
 
 ---
 
