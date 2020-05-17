@@ -101,4 +101,7 @@
     <PackageReference Include="Prism.Wpf" Version="7.2.0.1422" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>REM xcopy /y "$(TargetPath)" "$(SolutionDir)Utility-WPF\$(OutDir)Modules\"</PostBuildEvent>
+  </PropertyGroup>
 </Project>
