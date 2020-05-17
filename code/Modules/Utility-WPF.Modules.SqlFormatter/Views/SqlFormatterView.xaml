@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="Utility_WPF.Modules.SqlFormatter.Views.SqlFormatterView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Utility_WPF.Modules.SqlFormatter.Views"
+             xmlns:ext="clr-namespace:Utility_WPF.Core.Extensions;assembly=Utility-WPF.Core"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBox
+            Grid.Row="0"
+            Grid.Column="0" 
+            Name="Sql"
+            TextWrapping="Wrap"
+            AcceptsReturn="True"
+            VerticalScrollBarVisibility="Visible"
+            HorizontalAlignment="Stretch"
+            Text="{Binding Sql}"
+        />
+
+        <Button Grid.Row="1" 
+                Grid.Column="0" 
+                x:Name="FormatButton" 
+                Content="Format"
+                Command="{Binding FormatCommand}"
+                HorizontalAlignment="Right"
+        />
+
+        <WebBrowser 
+            Grid.Row="2"
+            Grid.Column="0" 
+            Grid.ColumnSpan="5"
+            ext:WebBrowserExtentions.Document="{Binding SqlFormatted}" 
+            />
+
+        <Button Grid.Row="3" 
+                Grid.Column="0" 
+                x:Name="CopyButton" 
+                Content="Copy"
+                Command="{Binding CopyCommand}"
+                HorizontalAlignment="Right"
+        />
+
+        <Separator Grid.Row="4" Grid.Column="0" />
+
+        <TextBlock  Grid.Row="5" 
+                    Grid.Column="0"
+                    Text="{Binding ErrorMessage}"
+                    Foreground="Red"
+                    TextWrapping="WrapWithOverflow"
+                    />
+    </Grid>
+</UserControl>

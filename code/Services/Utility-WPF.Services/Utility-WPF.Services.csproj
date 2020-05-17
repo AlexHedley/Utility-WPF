@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PoorMansTSqlFormatterLib35, Version=1.4.3.22897, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PoorMansTSQLFormatter.1.4.3.1\lib\net35\PoorMansTSqlFormatterLib35.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net" />
@@ -43,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="JSONService.cs" />
+    <Compile Include="SqlService.cs" />
     <Compile Include="WebHelperService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XMLService.cs" />
@@ -52,6 +57,9 @@
       <Project>{1e59b9fd-7ad7-4872-8daa-b5a8c8ac9f9a}</Project>
       <Name>Utility-WPF.Services.Interfaces</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

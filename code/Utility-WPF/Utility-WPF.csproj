@@ -123,6 +123,10 @@
       <Project>{1a89655b-085a-476e-8538-eef3ac91329e}</Project>
       <Name>Utility-WPF.Modules.SqlBuilder</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Modules\Utility-WPF.Modules.SqlFormatter\Utility-WPF.Modules.SqlFormatter.csproj">
+      <Project>{988cb089-e368-4b19-8cc4-ae7a0ae86685}</Project>
+      <Name>Utility-WPF.Modules.SqlFormatter</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Modules\Utility-WPF.Modules.URL\Utility-WPF.Modules.URL.csproj">
       <Project>{69f46bf5-b93b-4dde-9b34-b671ca3d8843}</Project>
       <Name>Utility-WPF.Modules.URL</Name>

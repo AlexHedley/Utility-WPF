@@ -52,6 +52,9 @@
                 <TabItem Header="SQL Builder">
                     <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegionSqlBuilder}" />
                 </TabItem>
+                <TabItem Header="SQL Formatter">
+                    <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegionSqlFormatter}" />
+                </TabItem>
             </TabControl>
         </Grid>
 

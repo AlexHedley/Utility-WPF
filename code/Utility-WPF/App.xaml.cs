@@ -7,6 +7,7 @@ using Utility_WPF.Modules.Guid;
 using Utility_WPF.Modules.HTML;
 using Utility_WPF.Modules.JSONPP;
 using Utility_WPF.Modules.SqlBuilder;
+using Utility_WPF.Modules.SqlFormatter;
 using Utility_WPF.Modules.URL;
 using Utility_WPF.Modules.XMLPP;
 using Utility_WPF.Services;
@@ -38,6 +39,7 @@ namespace Utility_WPF
             containerRegistry.RegisterSingleton<IWebHelperService, WebHelperService>();
             containerRegistry.RegisterSingleton<IXMLService, XMLService>();
             containerRegistry.RegisterSingleton<IJSONService, JSONService>();
+            containerRegistry.RegisterSingleton<ISqlService, SqlService>();
         }
 
         //protected override IModuleCatalog CreateModuleCatalog()
@@ -58,6 +60,7 @@ namespace Utility_WPF
             moduleCatalog.AddModule<XMLPPModule>();
             moduleCatalog.AddModule<JSONPPModule>();
             moduleCatalog.AddModule<SqlBuilderModule>();
+            moduleCatalog.AddModule<SqlFormatterModule>();
         }
     }
 }
