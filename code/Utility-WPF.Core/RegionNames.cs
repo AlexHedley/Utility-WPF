@@ -11,5 +11,6 @@
         public const string ContentRegionGuid = "ContentRegionGuid";
         public const string ContentRegionXml = "ContentRegionXml";
         public const string ContentRegionJson = "ContentRegionJson";
+        public const string ContentRegionSqlBuilder = "ContentRegionSqlBuilder";
     }
 }

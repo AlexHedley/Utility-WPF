@@ -6,6 +6,7 @@ using Prism.Modularity;
 using Utility_WPF.Modules.Guid;
 using Utility_WPF.Modules.HTML;
 using Utility_WPF.Modules.JSONPP;
+using Utility_WPF.Modules.SqlBuilder;
 using Utility_WPF.Modules.URL;
 using Utility_WPF.Modules.XMLPP;
 using Utility_WPF.Services;
@@ -56,6 +57,7 @@ namespace Utility_WPF
             moduleCatalog.AddModule<GuidModule>();
             moduleCatalog.AddModule<XMLPPModule>();
             moduleCatalog.AddModule<JSONPPModule>();
+            moduleCatalog.AddModule<SqlBuilderModule>();
         }
     }
 }

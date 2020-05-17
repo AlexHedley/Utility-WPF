@@ -32,6 +32,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility-WPF.Modules.XMLPP",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility-WPF.Modules.JSONPP", "Modules\Utility-WPF.Modules.JSONPP\Utility-WPF.Modules.JSONPP.csproj", "{72EEDA1F-5696-4FAE-8908-4A9DFC3F24EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility-WPF.Modules.SqlBuilder", "Modules\Utility-WPF.Modules.SqlBuilder\Utility-WPF.Modules.SqlBuilder.csproj", "{1A89655B-085A-476E-8538-EEF3AC91329E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -74,6 +76,10 @@ Global
 		{72EEDA1F-5696-4FAE-8908-4A9DFC3F24EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72EEDA1F-5696-4FAE-8908-4A9DFC3F24EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72EEDA1F-5696-4FAE-8908-4A9DFC3F24EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A89655B-085A-476E-8538-EEF3AC91329E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A89655B-085A-476E-8538-EEF3AC91329E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A89655B-085A-476E-8538-EEF3AC91329E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A89655B-085A-476E-8538-EEF3AC91329E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,6 +92,7 @@ Global
 		{E7CE2A3B-0714-4E90-924A-39AE2BE4C0AC} = {AFDF0020-05A5-4079-81A6-1647E4D5AF72}
 		{79459C47-9505-407B-AB86-972E1C4648E2} = {AFDF0020-05A5-4079-81A6-1647E4D5AF72}
 		{72EEDA1F-5696-4FAE-8908-4A9DFC3F24EB} = {AFDF0020-05A5-4079-81A6-1647E4D5AF72}
+		{1A89655B-085A-476E-8538-EEF3AC91329E} = {AFDF0020-05A5-4079-81A6-1647E4D5AF72}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2BB74EC6-7401-4A3B-8158-073B7C3DBAB9}

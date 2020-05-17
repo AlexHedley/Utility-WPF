@@ -49,6 +49,9 @@
                 <TabItem Header="JSON">
                     <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegionJson}" />
                 </TabItem>
+                <TabItem Header="SQL Builder">
+                    <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegionSqlBuilder}" />
+                </TabItem>
             </TabControl>
         </Grid>
 

@@ -119,6 +119,10 @@
       <Project>{72eeda1f-5696-4fae-8908-4a9dfc3f24eb}</Project>
       <Name>Utility-WPF.Modules.JSONPP</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Modules\Utility-WPF.Modules.SqlBuilder\Utility-WPF.Modules.SqlBuilder.csproj">
+      <Project>{1a89655b-085a-476e-8538-eef3ac91329e}</Project>
+      <Name>Utility-WPF.Modules.SqlBuilder</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Modules\Utility-WPF.Modules.URL\Utility-WPF.Modules.URL.csproj">
       <Project>{69f46bf5-b93b-4dde-9b34-b671ca3d8843}</Project>
       <Name>Utility-WPF.Modules.URL</Name>
