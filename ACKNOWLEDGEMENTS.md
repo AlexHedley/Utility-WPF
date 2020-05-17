@@ -13,3 +13,7 @@
   - Microsoft.Toolkit.Wpf.UI.Controls.WebView
     - https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/wpf-winforms/webview
     - https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls.WebView
+
+- PoorMansTSqlFormatter
+  - https://github.com/TaoK/PoorMansTSqlFormatter/
+  - https://www.nuget.org/packages/PoorMansTSQLFormatter/
