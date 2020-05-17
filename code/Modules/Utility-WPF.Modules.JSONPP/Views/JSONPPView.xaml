@@ -32,7 +32,7 @@
         <TextBox
             Grid.Row="1"
             Grid.Column="0" 
-            Name="XML"
+            Name="Json"
             TextWrapping="Wrap"
             AcceptsReturn="True"
             VerticalScrollBarVisibility="Visible"
