@@ -62,6 +62,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="JSONServiceTests.cs" />
+    <Compile Include="SqlServiceTests.cs" />
     <Compile Include="WebHelperServiceTests.cs" />
     <Compile Include="XMLServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
