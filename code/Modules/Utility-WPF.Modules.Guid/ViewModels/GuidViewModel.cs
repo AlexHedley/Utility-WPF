@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -48,6 +49,27 @@ namespace Utility_WPF.Modules.Guid.ViewModels
             set { SetProperty(ref _newGuid, value); }
         }
 
+        private bool _removeDashesZero;
+        public bool RemoveDashesZero
+        {
+            get { return _removeDashesZero; }
+            set { SetProperty(ref _removeDashesZero, value); }
+        }
+
+        private bool _removeDashesNew;
+        public bool RemoveDashesNew
+        {
+            get { return _removeDashesNew; }
+            set { SetProperty(ref _removeDashesNew, value); }
+        }
+
+        private bool _removeDashesMultiple;
+        public bool RemoveDashesMultiple
+        {
+            get { return _removeDashesMultiple; }
+            set { SetProperty(ref _removeDashesMultiple, value); }
+        }
+
         #endregion Properties
 
         #region Commands
@@ -57,6 +79,7 @@ namespace Utility_WPF.Modules.Guid.ViewModels
         public DelegateCommand CopyNewGuidCommand { get; private set; }
         public DelegateCommand GenerateGuidsCommand { get; private set; }
         public DelegateCommand CopyNewGuidsCommand { get; private set; }
+        public DelegateCommand RemoveDashesZeroCommand { get; private set; }
 
         #endregion Commands
 
@@ -74,6 +97,7 @@ namespace Utility_WPF.Modules.Guid.ViewModels
             CopyNewGuidCommand = new DelegateCommand(CopyNewGuid);
             GenerateGuidsCommand = new DelegateCommand(GenerateGuids);
             CopyNewGuidsCommand = new DelegateCommand(CopyNewGuids);
+            RemoveDashesZeroCommand = new DelegateCommand(RemoveDashesZeroCmd);
         }
 
         #region Private
@@ -92,6 +116,10 @@ namespace Utility_WPF.Modules.Guid.ViewModels
         private void GenerateGuid()
         {
             NewGuid = System.Guid.NewGuid().ToString();
+            if (RemoveDashesNew) 
+            {
+                NewGuid = Regex.Replace(NewGuid, @"\-", "");
+            }
         }
 
         /// <summary>
@@ -113,6 +141,12 @@ namespace Utility_WPF.Modules.Guid.ViewModels
             for (int i = 0; i < GuidCount; i++)
             {
                 var guid = System.Guid.NewGuid().ToString() + Environment.NewLine;
+
+                if (RemoveDashesMultiple)
+                {
+                    guid = Regex.Replace(guid, @"\-", "");
+                }
+
                 builder.Append(guid);
             }
 
@@ -125,6 +159,18 @@ namespace Utility_WPF.Modules.Guid.ViewModels
         private void CopyNewGuids()
         {
             Clipboard.SetText(NewGuids);
+        }
+
+        private void RemoveDashesZeroCmd() 
+        {
+            if (RemoveDashesZero)
+            {
+                ZeroGuid = Regex.Replace(ZeroGuid, @"\-", "");
+            }
+            else 
+            {
+                ZeroGuid = System.Guid.Empty.ToString(); //00000000-0000-0000-0000-000000000000
+            }
         }
 
         #endregion Private

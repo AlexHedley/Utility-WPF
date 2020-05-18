@@ -10,12 +10,15 @@
              prism:ViewModelLocator.AutoWireViewModel="True" >
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="5*"/>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -36,34 +39,47 @@
             Text="{Binding ZeroGuid}"
         />
 
+        <CheckBox Grid.Row="0" 
+                  Grid.Column="2"
+                  x:Name="RemoveDashesZeroCheckbox"
+                  IsChecked="{Binding RemoveDashesZero}"
+                  Command="{Binding RemoveDashesZeroCommand}"
+                  Content="Remove Dashes?"/>
+
         <Button Grid.Row="0" 
-                Grid.Column="2" 
+                Grid.Column="3" 
                 x:Name="CopyZeroGuidButton" 
                 Content="Copy"
                 Command="{Binding CopyZeroGuidCommand}"
         />
 
-        <Button Grid.Row="1" 
-                Grid.Column="1" 
-                x:Name="GenerateButton" 
-                Content="Generate"
-                Command="{Binding GenerateCommand}"
-        />
-
-        <Label Grid.Row="2" 
+        <Label Grid.Row="1" 
                Grid.Column="0"
                Content="New"
                />
         
         <TextBox
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="1"
             Name="NewGuid"
             Text="{Binding NewGuid}"
         />
 
-        <Button Grid.Row="2" 
-                Grid.Column="2" 
+        <CheckBox Grid.Row="1" 
+                  Grid.Column="2"
+                  x:Name="RemoveDashesNewCheckbox"
+                  IsChecked="{Binding RemoveDashesNew}"
+                  Content="Remove Dashes?"/>
+
+        <Button Grid.Row="1" 
+                Grid.Column="3" 
+                x:Name="GenerateButton" 
+                Content="Generate"
+                Command="{Binding GenerateCommand}"
+        />
+
+        <Button Grid.Row="1" 
+                Grid.Column="4" 
                 x:Name="CopyNewGuidButton" 
                 Content="Copy"
                 Command="{Binding CopyNewGuidCommand}"
@@ -78,30 +94,35 @@
                />
 
         <TextBox
-            Grid.Row="4"
+            Grid.Row="5"
             Grid.Column="0"
-            Grid.ColumnSpan="3"
             Name="GuidCount"
             Text="{Binding GuidCount}"
         />
 
-        <Button Grid.Row="4" 
-                Grid.Column="1" 
+        <CheckBox Grid.Row="5" 
+                  Grid.Column="1"
+                  x:Name="RemoveDashesMultipleCheckbox"
+                  IsChecked="{Binding RemoveDashesMultiple}"
+                  Content="Remove Dashes?"/>
+
+        <Button Grid.Row="5" 
+                Grid.Column="2" 
                 x:Name="GenerateGuidsButton" 
                 Content="Go!"
                 Command="{Binding GenerateGuidsCommand}"
         />
-        <Button Grid.Row="4" 
-                Grid.Column="2" 
+        <Button Grid.Row="5" 
+                Grid.Column="3" 
                 x:Name="CopyNewGuidsButton" 
                 Content="Copy"
                 Command="{Binding CopyNewGuidsCommand}"
         />
 
         <TextBox
-            Grid.Row="5"
+            Grid.Row="6"
             Grid.Column="0"
-            Grid.ColumnSpan="3"
+            Grid.ColumnSpan="5"
             Name="Guids"
             TextWrapping="Wrap"
             AcceptsReturn="True"
