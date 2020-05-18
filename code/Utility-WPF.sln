@@ -36,6 +36,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility-WPF.Modules.SqlBuil
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility-WPF.Modules.SqlFormatter", "Modules\Utility-WPF.Modules.SqlFormatter\Utility-WPF.Modules.SqlFormatter.csproj", "{988CB089-E368-4B19-8CC4-AE7A0AE86685}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility-WPF.Services.Tests", "Utility-WPF.Services.Tests\Utility-WPF.Services.Tests.csproj", "{8DF2B804-157F-463D-AD89-330C75900AC6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -86,6 +88,10 @@ Global
 		{988CB089-E368-4B19-8CC4-AE7A0AE86685}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{988CB089-E368-4B19-8CC4-AE7A0AE86685}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{988CB089-E368-4B19-8CC4-AE7A0AE86685}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DF2B804-157F-463D-AD89-330C75900AC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DF2B804-157F-463D-AD89-330C75900AC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DF2B804-157F-463D-AD89-330C75900AC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DF2B804-157F-463D-AD89-330C75900AC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -100,6 +106,7 @@ Global
 		{72EEDA1F-5696-4FAE-8908-4A9DFC3F24EB} = {AFDF0020-05A5-4079-81A6-1647E4D5AF72}
 		{1A89655B-085A-476E-8538-EEF3AC91329E} = {AFDF0020-05A5-4079-81A6-1647E4D5AF72}
 		{988CB089-E368-4B19-8CC4-AE7A0AE86685} = {AFDF0020-05A5-4079-81A6-1647E4D5AF72}
+		{8DF2B804-157F-463D-AD89-330C75900AC6} = {E5CF1ECF-F23F-483C-8E85-48C41A8594F5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2BB74EC6-7401-4A3B-8158-073B7C3DBAB9}
