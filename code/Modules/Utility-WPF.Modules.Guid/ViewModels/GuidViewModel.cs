@@ -45,8 +45,8 @@ namespace Utility_WPF.Modules.Guid.ViewModels
         private string _newGuids;
         public string NewGuids
         {
-            get { return _newGuid; }
-            set { SetProperty(ref _newGuid, value); }
+            get { return _newGuids; }
+            set { SetProperty(ref _newGuids, value); }
         }
 
         private bool _removeDashesZero;
