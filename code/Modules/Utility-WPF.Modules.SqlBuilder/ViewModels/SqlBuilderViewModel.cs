@@ -35,6 +35,13 @@ namespace Utility_WPF.Modules.SqlBuilder.ViewModels
             set { SetProperty(ref _seperator, value); }
         }
 
+        private bool _not;
+        public bool Not
+        {
+            get { return _not; }
+            set { SetProperty(ref _not, value); }
+        }
+
         #endregion Properties
 
         #region Commands
@@ -42,7 +49,7 @@ namespace Utility_WPF.Modules.SqlBuilder.ViewModels
         public DelegateCommand ParseCommand { get; private set; }
         public DelegateCommand ClearCommand { get; private set; }
         public DelegateCommand CopyCommand { get; private set; }
-
+        
         #endregion Commands
 
         /// <summary>
@@ -84,8 +91,9 @@ namespace Utility_WPF.Modules.SqlBuilder.ViewModels
 
             var items = Sql.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
             var inItems = string.Join(",", items.Select(i => $"{Seperator}{i.Trim()}{Seperator}"));
+            var not = Not ? "NOT " : "";
 
-            SqlParsed = $"IN ({inItems})";
+            SqlParsed = $"{not}IN ({inItems})";
         }
 
         /// <summary>

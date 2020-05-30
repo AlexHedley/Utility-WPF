@@ -52,8 +52,14 @@
             <ComboBoxItem Content="'" Name="Quote" />
         </ComboBox>
 
+        <CheckBox Grid.Row="1" 
+                  Grid.Column="2"
+                  x:Name="NotCheckbox"
+                  IsChecked="{Binding Not}"
+                  Content="NOT"/>
+        
         <Button Grid.Row="1" 
-                Grid.Column="2" 
+                Grid.Column="3" 
                 x:Name="ParseButton" 
                 Content="Parse" 
                 VerticalAlignment="Top" 
