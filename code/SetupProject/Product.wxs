@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?define Utility-WPF_TargetDir=$(var.Utility-WPF.TargetDir)?>
+  <!--<?define Utility-WPF.Core_TargetDir=$(var.Utility-WPF.Core.TargetDir)?>-->
+  <!--<?define Utility-WPF.Services.Interfaces_TargetDir=$(var.Utility-WPF.Services.Interfaces.TargetDir)?>-->
+  <!--<?define Utility-WPF.Services_TargetDir=$(var.Utility-WPF.Services.TargetDir)?>-->
+  <!--<?define Utility-WPF.Modules.HTML_TargetDir=$(var.Utility-WPF.Modules.HTML.TargetDir)?>-->
+  <!--<?define Utility-WPF.Modules.URL_TargetDir=$(var.Utility-WPF.Modules.URL.TargetDir)?>-->
+  <!--<?define Utility-WPF.Modules.Guid_TargetDir=$(var.Utility-WPF.Modules.Guid.TargetDir)?>-->
+  <!--<?define Utility-WPF.Modules.XMLPP_TargetDir=$(var.Utility-WPF.Modules.XMLPP.TargetDir)?>-->
+  <!--<?define Utility-WPF.Modules.JSONPP_TargetDir=$(var.Utility-WPF.Modules.JSONPP.TargetDir)?>-->
+  <!--<?define Utility-WPF.Modules.SqlBuilder_TargetDir=$(var.Utility-WPF.Modules.SqlBuilder.TargetDir)?>-->
+  <!--<?define Utility-WPF.Modules.SqlFormatter_TargetDir=$(var.Utility-WPF.Modules.SqlFormatter.TargetDir)?>-->
+	<Product Id="40bbb7c0-4aea-4b85-8de7-10bc67cb79d2" Name="Utility" Language="1033" Version="1.0.0.0" Manufacturer="Alex Hedley" UpgradeCode="08d5d5ca-4239-4338-b860-d4419d1576bd">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <Icon Id="Utility.ico" SourceFile="$(var.ProjectDir)Utility.ico" />
+    <Property Id="ARPPRODUCTICON" Value="Utility.ico" />
+
+    <WixVariable Id="WixUIBannerBmp" Value="Images\installer_top-banner.bmp" />
+    <WixVariable Id="WixUIDialogBmp" Value="Images\installer_background.bmp" />
+
+    <!--<UIRef Id="WixUI_Minimal" />-->
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+    <UIRef Id="WixUI_InstallDir" />
+    
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="Utility" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+      <ComponentRef Id="ApplicationShortcut" />
+      <ComponentRef Id="ApplicationShortcutDesktop" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="Utility" />
+			</Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="Utility" />
+      </Directory>
+      <Directory Id="DesktopFolder" Name="Desktop" />
+		</Directory>
+	</Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="ApplicationShortcut" Guid="4430bce1-9f25-4c64-0edb-f75d597fdde9">
+        <Shortcut Id="ApplicationStartMenuShortcut" Name="Utility" Description="Utility" Target="[INSTALLFOLDER]Utility-WPF.exe" WorkingDirectory="INSTALLFOLDER" />
+        <RemoveFolder Id="RemoveApplicationProgramsFolder" Directory="ApplicationProgramsFolder" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software\Utility" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="DesktopFolder">
+      <Component Id="ApplicationShortcutDesktop" Guid="7e72e8d8-ad00-45b3-9731-2f360ab00bfa">
+        <Shortcut Id="ApplicationDesktopShortcut" Name="Utility" Description="Utility" Target="[INSTALLFOLDER]Utility-WPF.exe" WorkingDirectory="INSTALLFOLDER" />
+        <RemoveFolder Id="RemoveDesktopFolder" Directory="DesktopFolder" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software\Utility" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+
+  <Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+			<!-- <Component Id="ProductComponent"> -->
+				<!-- TODO: Insert files, registry keys, and other resources here. -->
+			<!-- </Component> -->
+			<Component Id="Utility_WPF.exe" Guid="1b2dfac6-7fda-4a61-887e-e0246c9f13fa">
+			  <File Id="Utility_WPF.exe" Name="Utility-WPF.exe" Source="$(var.Utility-WPF_TargetDir)Utility-WPF.exe" />
+			</Component>
+			<Component Id="Utility_WPF.Core.dll" Guid="ea7c39d6-81fa-4779-bbff-42c0e49ec3df">
+			  <!--<File Id="Utility_WPF.Core.dll" Name="Utility-WPF.Core.dll" Source="$(var.Utility-WPF.Core_TargetDir)Utility-WPF.Core.dll" />-->
+			  <File Id="Utility_WPF.Core.dll" Name="Utility-WPF.Core.dll" Source="$(var.Utility-WPF_TargetDir)Utility-WPF.Core.dll" />
+			</Component>
+			<Component Id="Prism.Wpf.dll" Guid="ec59113e-b450-4aa8-9e83-531a6454ba2b">
+			  <File Id="Prism.Wpf.dll" Name="Prism.Wpf.dll" Source="$(var.Utility-WPF_TargetDir)Prism.Wpf.dll" />
+			</Component>
+			<Component Id="Prism.DryIoc.Wpf.dll" Guid="d41b12ac-498b-4a71-a8c3-a64f51837648">
+			  <File Id="Prism.DryIoc.Wpf.dll" Name="Prism.DryIoc.Wpf.dll" Source="$(var.Utility-WPF_TargetDir)Prism.DryIoc.Wpf.dll" />
+			</Component>
+			<Component Id="Prism.dll" Guid="ab0e376f-0ba4-4093-94df-2a3d5c685489">
+			  <File Id="Prism.dll" Name="Prism.dll" Source="$(var.Utility-WPF_TargetDir)Prism.dll" />
+			</Component>
+			<Component Id="Utility_WPF.Services.Interfaces.dll" Guid="52aadc1a-b984-46ed-8fbc-7bea75218b27">
+			  <!--<File Id="Utility_WPF.Services.Interfaces.dll" Name="Utility-WPF.Services.Interfaces.dll" Source="$(var.Utility-WPF.Services.Interfaces_TargetDir)Utility-WPF.Services.Interfaces.dll" />-->
+			  <File Id="Utility_WPF.Services.Interfaces.dll" Name="Utility-WPF.Services.Interfaces.dll" Source="$(var.Utility-WPF_TargetDir)Utility-WPF.Services.Interfaces.dll" />
+			</Component>
+			<Component Id="Utility_WPF.Services.dll" Guid="878ee875-87e9-4e62-914c-3f91cd4a6737">
+			  <!--<File Id="Utility_WPF.Services.dll" Name="Utility-WPF.Services.dll" Source="$(var.Utility-WPF.Services_TargetDir)Utility-WPF.Services.dll" />-->
+			  <File Id="Utility_WPF.Services.dll" Name="Utility-WPF.Services.dll" Source="$(var.Utility-WPF_TargetDir)Utility-WPF.Services.dll" />
+			</Component>
+			<Component Id="Utility_WPF.Modules.HTML.dll" Guid="c76053a3-e211-4e16-90d0-090784b28036">
+			  <!--<File Id="Utility_WPF.Modules.HTML.dll" Name="Utility-WPF.Modules.HTML.dll" Source="$(var.Utility-WPF.Modules.HTML_TargetDir)Utility-WPF.Modules.HTML.dll" />-->
+			  <File Id="Utility_WPF.Modules.HTML.dll" Name="Utility-WPF.Modules.HTML.dll" Source="$(var.Utility-WPF_TargetDir)Utility-WPF.Modules.HTML.dll" />
+			</Component>
+			<Component Id="Utility_WPF.Modules.URL.dll" Guid="fa93895c-6e0c-48d4-9c3c-d5f28b09bef8">
+			  <!--<File Id="Utility_WPF.Modules.URL.dll" Name="Utility-WPF.Modules.URL.dll" Source="$(var.Utility-WPF.Modules.URL_TargetDir)Utility-WPF.Modules.URL.dll" />-->
+			  <File Id="Utility_WPF.Modules.URL.dll" Name="Utility-WPF.Modules.URL.dll" Source="$(var.Utility-WPF_TargetDir)Utility-WPF.Modules.URL.dll" />
+			</Component>
+			<Component Id="Utility_WPF.Modules.Guid.dll" Guid="1732564e-1a5d-4759-a0b2-dd970f2e8d36">
+			  <!--<File Id="Utility_WPF.Modules.Guid.dll" Name="Utility-WPF.Modules.Guid.dll" Source="$(var.Utility-WPF.Modules.Guid_TargetDir)Utility-WPF.Modules.Guid.dll" />-->
+			  <File Id="Utility_WPF.Modules.Guid.dll" Name="Utility-WPF.Modules.Guid.dll" Source="$(var.Utility-WPF_TargetDir)Utility-WPF.Modules.Guid.dll" />
+			</Component>
+			<Component Id="Utility_WPF.Modules.XMLPP.dll" Guid="1de55530-0271-4fee-a2b1-c2fec9f96657">
+			  <!--<File Id="Utility_WPF.Modules.XMLPP.dll" Name="Utility-WPF.Modules.XMLPP.dll" Source="$(var.Utility-WPF.Modules.XMLPP_TargetDir)Utility-WPF.Modules.XMLPP.dll" />-->
+			  <File Id="Utility_WPF.Modules.XMLPP.dll" Name="Utility-WPF.Modules.XMLPP.dll" Source="$(var.Utility-WPF_TargetDir)Utility-WPF.Modules.XMLPP.dll" />
+			</Component>
+			<Component Id="Utility_WPF.Modules.JSONPP.dll" Guid="e93b5e34-8894-4264-8066-704ffea9ef6e">
+			  <!--<File Id="Utility_WPF.Modules.JSONPP.dll" Name="Utility-WPF.Modules.JSONPP.dll" Source="$(var.Utility-WPF.Modules.JSONPP_TargetDir)Utility-WPF.Modules.JSONPP.dll" />-->
+			  <File Id="Utility_WPF.Modules.JSONPP.dll" Name="Utility-WPF.Modules.JSONPP.dll" Source="$(var.Utility-WPF_TargetDir)Utility-WPF.Modules.JSONPP.dll" />
+			</Component>
+			<Component Id="Utility_WPF.Modules.SqlBuilder.dll" Guid="9a1233db-33ca-4b82-993d-b6f23385a244">
+			  <!--<File Id="Utility_WPF.Modules.SqlBuilder.dll" Name="Utility-WPF.Modules.SqlBuilder.dll" Source="$(var.Utility-WPF.Modules.SqlBuilder_TargetDir)Utility-WPF.Modules.SqlBuilder.dll" />-->
+        <File Id="Utility_WPF.Modules.SqlBuilder.dll" Name="Utility-WPF.Modules.SqlBuilder.dll" Source="$(var.Utility-WPF_TargetDir)Utility-WPF.Modules.SqlBuilder.dll" />
+			</Component>
+			<Component Id="Utility_WPF.Modules.SqlFormatter.dll" Guid="8af48756-d6c1-47f2-9112-5720143d310e">
+			  <!--<File Id="Utility_WPF.Modules.SqlFormatter.dll" Name="Utility-WPF.Modules.SqlFormatter.dll" Source="$(var.Utility-WPF.Modules.SqlFormatter_TargetDir)Utility-WPF.Modules.SqlFormatter.dll" />-->
+			  <File Id="Utility_WPF.Modules.SqlFormatter.dll" Name="Utility-WPF.Modules.SqlFormatter.dll" Source="$(var.Utility-WPF_TargetDir)Utility-WPF.Modules.SqlFormatter.dll" />
+			</Component>
+			<Component Id="CommonServiceLocator.dll" Guid="47c13a2d-ab55-4186-a398-619ef4ab0383">
+			  <File Id="CommonServiceLocator.dll" Name="CommonServiceLocator.dll" Source="$(var.Utility-WPF_TargetDir)CommonServiceLocator.dll" />
+			</Component>
+			<Component Id="System.Windows.Interactivity.dll" Guid="623eb92a-ce2c-4eee-ae4d-436e62823987">
+			  <File Id="System.Windows.Interactivity.dll" Name="System.Windows.Interactivity.dll" Source="$(var.Utility-WPF_TargetDir)System.Windows.Interactivity.dll" />
+			</Component>
+			<Component Id="DryIoc.dll" Guid="7b761ff9-3eb8-4b39-a24c-c257e5b0b90c">
+			  <File Id="DryIoc.dll" Name="DryIoc.dll" Source="$(var.Utility-WPF_TargetDir)DryIoc.dll" />
+			</Component>
+			<Component Id="System.ValueTuple.dll" Guid="8f226683-6221-471b-9dbf-359398ff842b">
+			  <File Id="System.ValueTuple.dll" Name="System.ValueTuple.dll" Source="$(var.Utility-WPF_TargetDir)System.ValueTuple.dll" />
+			</Component>
+			<Component Id="PoorMansTSqlFormatterLib35.dll" Guid="0e5e4ca9-8bba-41ba-889f-a2bfa64ea0d1">
+			  <File Id="PoorMansTSqlFormatterLib35.dll" Name="PoorMansTSqlFormatterLib35.dll" Source="$(var.Utility-WPF_TargetDir)PoorMansTSqlFormatterLib35.dll" />
+			</Component>
+			<Component Id="Microsoft.Toolkit.Wpf.UI.Controls.WebView.dll" Guid="42814da9-bbc3-4c3d-90ba-31bbd3d7515f">
+			  <File Id="Microsoft.Toolkit.Wpf.UI.Controls.WebView.dll" Name="Microsoft.Toolkit.Wpf.UI.Controls.WebView.dll" Source="$(var.Utility-WPF_TargetDir)Microsoft.Toolkit.Wpf.UI.Controls.WebView.dll" />
+			</Component>
+			<Component Id="Page.html" Guid="7e97e346-44cc-4575-9a54-ac9486ab9507">
+			  <!--<File Id="Page.html" Name="Page.html" Source="$(var.Utility-WPF.Modules.HTML_TargetDir)Page.html" />-->
+			  <File Id="Page.html" Name="Page.html" Source="$(var.Utility-WPF_TargetDir)Page.html" />
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>
