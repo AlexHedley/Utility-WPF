@@ -9,7 +9,8 @@
 
     <WixVariable Id="WixUIBannerBmp" Value="Images\installer_top-banner.bmp" />
     <WixVariable Id="WixUIDialogBmp" Value="Images\installer_background.bmp" />
-
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectDir)\License.rtf" />
+    
     <!--<UIRef Id="WixUI_Minimal" />-->
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
     <UIRef Id="WixUI_InstallDir" />

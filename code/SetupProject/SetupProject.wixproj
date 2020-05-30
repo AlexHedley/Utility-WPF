@@ -24,6 +24,9 @@
   <ItemGroup>
     <Content Include="Images\installer_background.bmp" />
     <Content Include="Images\installer_top-banner.bmp" />
+    <Content Include="License.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="SetupProject.wax" />
     <Content Include="Utility.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
