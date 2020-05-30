@@ -36,7 +36,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility-WPF.Modules.SqlBuil
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility-WPF.Modules.SqlFormatter", "Modules\Utility-WPF.Modules.SqlFormatter\Utility-WPF.Modules.SqlFormatter.csproj", "{988CB089-E368-4B19-8CC4-AE7A0AE86685}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility-WPF.Services.Tests", "Utility-WPF.Services.Tests\Utility-WPF.Services.Tests.csproj", "{8DF2B804-157F-463D-AD89-330C75900AC6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility-WPF.Services.Tests", "Tests\Utility-WPF.Services.Tests.csproj", "{8DF2B804-157F-463D-AD89-330C75900AC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
