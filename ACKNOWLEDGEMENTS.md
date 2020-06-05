@@ -5,7 +5,6 @@
 
   See the Twitch archives
   - [Building Outlook: Setting up the Prism Project](https://www.youtube.com/watch?v=yd_DtUKf3pc&list=PLG8rj6Rr0BU_r0pLKvkF5THxzce6Ygdkm&index=18)
-  - 
 
 ## Libs
 
@@ -17,3 +16,10 @@
 - PoorMansTSqlFormatter
   - https://github.com/TaoK/PoorMansTSqlFormatter/
   - https://www.nuget.org/packages/PoorMansTSQLFormatter/
+
+## Assets
+
+- [Visual Studio Image Library](https://www.microsoft.com/en-gb/download/details.aspx?id=35825)
+  - [EULA](VisualStudio2019ImageLibraryEULA.rtf)
+    - VS2019 Image Library.zip
+      - Copy
