@@ -29,13 +29,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-
-        <!--<TextBlock Grid.Row="0" 
-                   Grid.Column="1" 
-                   Text="{Binding Encode}"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Center" 
-                   />-->
+        
         <TextBox
             Grid.Row="0"
             Grid.Column="0" 
@@ -47,7 +41,9 @@
             Text="{Binding Encode}"
         />
 
-        <Grid Grid.Row="1" Margin="0,10">
+        <Grid 
+            Grid.Row="1" 
+            Margin="0,10">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
@@ -55,7 +51,8 @@
             </Grid.ColumnDefinitions>
 
             <!-- Buttons -->
-            <Button Grid.Row="1" 
+            <Button 
+                Grid.Row="1" 
                 Grid.Column="0" 
                 x:Name="ClearButton" 
                 Content="Clear" 
@@ -66,42 +63,49 @@
                 Command="{Binding ClearCommand}"
             />
 
-            <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
+            <StackPanel 
+                Grid.Column="1"
+                Orientation="Horizontal"
+                HorizontalAlignment="Right">
                 
-                <Button Grid.Row="1" 
-                Grid.Column="2" 
-                x:Name="EncodeButton" 
-                Content="Encode" 
-                VerticalAlignment="Top" 
-                HorizontalAlignment="Right"
-                Height="25"
-                Style="{StaticResource App_Button_Style}"
-                Command="{Binding EncodeCommand}"
-                />
+                <Button
+                    Grid.Row="1" 
+                    Grid.Column="2" 
+                    x:Name="EncodeButton" 
+                    Content="Encode" 
+                    VerticalAlignment="Top" 
+                    HorizontalAlignment="Right"
+                    Height="25"
+                    Style="{StaticResource App_Button_Style}"
+                    Command="{Binding EncodeCommand}"
+                    />
 
-                <Label Grid.Row="1" 
-               Grid.Column="3" 
-               Height="28" 
-               HorizontalAlignment="Center"
-               Content="{Binding CharacterCount}"
-               />
+                <Label 
+                    Grid.Row="1" 
+                    Grid.Column="3" 
+                    Height="28" 
+                    HorizontalAlignment="Center"
+                    Content="{Binding CharacterCount}"
+                    />
 
-                <Button Grid.Row="1" 
-                Grid.Column="4" 
-                x:Name="DecodeButton" 
-                Content="Decode" 
-                VerticalAlignment="Top" 
-                HorizontalAlignment="Right"
-                Height="25"
-                Style="{StaticResource App_Button_Style}"
-                Command="{Binding DecodeCommand}"
-                />
-                
+                <Button 
+                    Grid.Row="1" 
+                    Grid.Column="4" 
+                    x:Name="DecodeButton" 
+                    Content="Decode" 
+                    VerticalAlignment="Top" 
+                    HorizontalAlignment="Right"
+                    Height="25"
+                    Style="{StaticResource App_Button_Style}"
+                    Command="{Binding DecodeCommand}"
+                    />
+
             </StackPanel>
 
         </Grid>
 
-        <TabControl Grid.Row="2">
+        <TabControl 
+            Grid.Row="2">
 
             <TabItem Header="Pretty">
                 <WebBrowser 
@@ -111,6 +115,7 @@
                     ext:WebBrowserExtentions.Document="{Binding Decode}" 
                 />
             </TabItem>
+            
             <TabItem Header="Decoded">
                 <TextBox
                     Grid.Row="2"
@@ -126,27 +131,8 @@
                     FontFamily="Courier New"
                 />
             </TabItem>
-
             
         </TabControl>
         
-        
-        
-        <!--<WPF:WebView x:Name="_webView"
-                     Grid.Row="0"
-                     Grid.Column="0" />-->
-        
-        <!--<WebBrowser 
-            Grid.Row="3"
-            Grid.Column="0" 
-            Grid.ColumnSpan="5"
-            Name="wbSample">
-        </WebBrowser>-->
-
-        
-
-        <!--<TextBlock Text="{Binding Message}"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center" />-->
     </Grid>
 </UserControl>
