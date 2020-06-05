@@ -39,11 +39,39 @@ TODO:
 - [ ] XML Pretty
 - [ ] SQL Formatter
 
---
+---
 
 ## Screenshots
 
 ![Example](assets/Utility-WPF.gif)
+
+<details>
+  <summary>More</summary>
+
+  <img src="assets/Guid.png">
+  <img src="assets/Guid2.png">
+  <br />
+  <img src="assets/HTML.png">
+  <img src="assets/HTML2.png">
+  <br />
+  <img src="assets/JSON.png">
+  <img src="assets/JSON2.png">
+  <img src="assets/JSON3.png">
+  <br />
+  <img src="assets/SqlBuilder.png">
+  <img src="assets/SqlBuilder2.png">
+  <br />
+  <img src="assets/SqlFormatter.png">
+  <img src="assets/SqlFormatter2.png">
+  <br />
+  <img src="assets/URL.png">
+  <img src="assets/URL2.png">
+  <br />
+  <img src="assets/XML.png">
+  <img src="assets/XML2.png">
+  <img src="assets/XML3.png">
+
+</details>
 
 ---
 
