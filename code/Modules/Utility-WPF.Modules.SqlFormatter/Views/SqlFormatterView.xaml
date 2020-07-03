@@ -9,7 +9,7 @@
              d:DesignHeight="300" d:DesignWidth="300"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True" >
-    <Grid>
+    <Grid Margin="10,5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
@@ -40,9 +40,12 @@
                 Content="Format"
                 Command="{Binding FormatCommand}"
                 HorizontalAlignment="Right"
+                Padding="10,0"
+                Height="25"
         />
 
         <WebBrowser 
+            Name="WebBrowser"
             Grid.Row="2"
             Grid.Column="0" 
             Grid.ColumnSpan="5"
@@ -52,9 +55,11 @@
         <Button Grid.Row="3" 
                 Grid.Column="0" 
                 x:Name="CopyButton" 
-                Content="Copy"
+                Content="{StaticResource CopyButtonImage}" 
                 Command="{Binding CopyCommand}"
                 HorizontalAlignment="Right"
+                Padding="10,0"
+                Height="25"
         />
 
         <Separator Grid.Row="4" Grid.Column="0" />
