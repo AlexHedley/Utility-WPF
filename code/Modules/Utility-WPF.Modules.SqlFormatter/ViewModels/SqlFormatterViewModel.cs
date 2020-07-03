@@ -108,6 +108,10 @@ namespace Utility_WPF.Modules.SqlFormatter.ViewModels
         private void CopySql()
         {
             Clipboard.SetText(SqlFormatted);
+
+            //WebBrowser.Document.ExecCommand("SelectAll", false, null);
+            //WebBrowser.Document.ExecCommand("Copy", false, null);
+            //WebBrowser.Document.Body.InnerText;
         }
 
         #endregion Commands
