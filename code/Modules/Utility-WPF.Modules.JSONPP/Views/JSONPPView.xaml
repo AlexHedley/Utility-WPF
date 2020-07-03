@@ -8,7 +8,7 @@
              d:DesignHeight="300" d:DesignWidth="300"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True" >
-    <Grid>
+    <Grid Margin="10,5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
@@ -27,6 +27,8 @@
                 Content="Pretty"
                 Command="{Binding PrettyCommand}"
                 HorizontalAlignment="Right"
+                Padding="10,0"
+                Height="25"
         />
 
         <TextBox
@@ -43,9 +45,11 @@
         <Button Grid.Row="2" 
                 Grid.Column="0" 
                 x:Name="CopyButton" 
-                Content="Copy"
+                Content="{StaticResource CopyButtonImage}" 
                 Command="{Binding CopyCommand}"
                 HorizontalAlignment="Right"
+                Padding="10,0"
+                Height="25"
         />
 
         <Separator Grid.Row="3" Grid.Column="0" />
