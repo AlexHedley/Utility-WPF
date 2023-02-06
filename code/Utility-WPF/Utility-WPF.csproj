@@ -70,6 +70,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DynamicDirectoryModuleCatalog.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -104,6 +105,48 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Utility.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Modules\Utility-WPF.Modules.Guid\Utility-WPF.Modules.Guid.csproj">
+      <Project>{e7ce2a3b-0714-4e90-924a-39ae2be4c0ac}</Project>
+      <Name>Utility-WPF.Modules.Guid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\Utility-WPF.Modules.HTML\Utility-WPF.Modules.HTML.csproj">
+      <Project>{2e872209-e671-4be4-bc10-0ace99c9af2c}</Project>
+      <Name>Utility-WPF.Modules.HTML</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\Utility-WPF.Modules.JSONPP\Utility-WPF.Modules.JSONPP.csproj">
+      <Project>{72eeda1f-5696-4fae-8908-4a9dfc3f24eb}</Project>
+      <Name>Utility-WPF.Modules.JSONPP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\Utility-WPF.Modules.SqlBuilder\Utility-WPF.Modules.SqlBuilder.csproj">
+      <Project>{1a89655b-085a-476e-8538-eef3ac91329e}</Project>
+      <Name>Utility-WPF.Modules.SqlBuilder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\Utility-WPF.Modules.SqlFormatter\Utility-WPF.Modules.SqlFormatter.csproj">
+      <Project>{988cb089-e368-4b19-8cc4-ae7a0ae86685}</Project>
+      <Name>Utility-WPF.Modules.SqlFormatter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\Utility-WPF.Modules.URL\Utility-WPF.Modules.URL.csproj">
+      <Project>{69f46bf5-b93b-4dde-9b34-b671ca3d8843}</Project>
+      <Name>Utility-WPF.Modules.URL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\Utility-WPF.Modules.XMLPP\Utility-WPF.Modules.XMLPP.csproj">
+      <Project>{79459c47-9505-407b-ab86-972e1c4648e2}</Project>
+      <Name>Utility-WPF.Modules.XMLPP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Utility-WPF.Services.Interfaces\Utility-WPF.Services.Interfaces.csproj">
+      <Project>{1e59b9fd-7ad7-4872-8daa-b5a8c8ac9f9a}</Project>
+      <Name>Utility-WPF.Services.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Utility-WPF.Services\Utility-WPF.Services.csproj">
+      <Project>{bfb69cb5-2128-4f2e-920e-779916e8a5a1}</Project>
+      <Name>Utility-WPF.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility-WPF.Core\Utility-WPF.Core.csproj">
+      <Project>{45452d20-2310-4f33-8666-2166c10c3f67}</Project>
+      <Name>Utility-WPF.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

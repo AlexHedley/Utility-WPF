@@ -1,10 +1,63 @@
 ﻿<Window x:Class="Utility_WPF.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:core="clr-namespace:Utility_WPF.Core;assembly=Utility-WPF.Core"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
-        Title="{Binding Title}" Height="350" Width="525">
-    <Grid>
-        <ContentControl prism:RegionManager.RegionName="ContentRegion" />
-    </Grid>
+        Title="{Binding Title}" Height="350" Width="525"
+        ResizeMode="CanResize"
+        >
+
+    <!--<DockPanel LastChildFill="True">-->
+        <!--<Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_New" />
+                <MenuItem Header="_Open" />
+                <MenuItem Header="_Save" />
+                <Separator />
+                <MenuItem Header="_Exit" />
+            </MenuItem>
+        </Menu>-->
+
+        <!--<StatusBar 
+            DockPanel.Dock="Bottom"
+            Name="sbar" 
+            VerticalAlignment="Bottom" 
+            Background="Beige">
+            <StatusBarItem>
+                <TextBlock>Downloading File</TextBlock>
+            </StatusBarItem>
+        </StatusBar>-->
+
+        <Grid>
+            <TabControl>
+                <!--<TabItem Header="General">
+                    <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}" />
+                </TabItem>-->
+                <TabItem Header="HTML Decode/Encode">
+                    <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegionHTML}" />
+                </TabItem>
+                <TabItem Header="URL Encode">
+                    <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegionURL}" />
+                </TabItem>
+                <TabItem Header="Guid">
+                    <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegionGuid}" />
+                </TabItem>
+                <TabItem Header="XML">
+                    <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegionXml}" />
+                </TabItem>
+                <TabItem Header="JSON">
+                    <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegionJson}" />
+                </TabItem>
+                <TabItem Header="SQL Builder">
+                    <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegionSqlBuilder}" />
+                </TabItem>
+                <TabItem Header="SQL Formatter">
+                    <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegionSqlFormatter}" />
+                </TabItem>
+            </TabControl>
+        </Grid>
+
+    <!--</DockPanel>-->
+    
 </Window>
