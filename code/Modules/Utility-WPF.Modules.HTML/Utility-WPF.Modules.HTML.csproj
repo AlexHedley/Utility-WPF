@@ -101,7 +101,7 @@
     <PackageReference Include="Microsoft.Toolkit.Wpf.UI.Controls.WebView">
       <Version>6.1.2</Version>
     </PackageReference>
-    <PackageReference Include="Prism.Wpf" Version="7.2.0.1422" />
+    <PackageReference Include="Prism.Wpf" Version="8.1.97" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Page.html">
