@@ -94,7 +94,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Prism.Wpf" Version="8.1.97" />
+    <PackageReference Include="Prism.Wpf" Version="9.0.537" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
